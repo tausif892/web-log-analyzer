@@ -1,0 +1,17 @@
+Error before Pig is launched
+----------------------------
+ERROR 2999: Unexpected internal error. getSubject is not supported
+
+java.lang.UnsupportedOperationException: getSubject is not supported
+	at java.base/javax.security.auth.Subject.getSubject(Subject.java:277)
+	at org.apache.hadoop.security.UserGroupInformation.getCurrentUser(UserGroupInformation.java:700)
+	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3445)
+	at org.apache.hadoop.fs.FileSystem$Cache$Key.<init>(FileSystem.java:3435)
+	at org.apache.hadoop.fs.FileSystem$Cache.get(FileSystem.java:3277)
+	at org.apache.hadoop.fs.FileSystem.get(FileSystem.java:475)
+	at org.apache.hadoop.fs.FileSystem.getLocal(FileSystem.java:431)
+	at org.apache.pig.impl.io.FileLocalizer.fetchFilesInternal(FileLocalizer.java:800)
+	at org.apache.pig.impl.io.FileLocalizer.fetchFile(FileLocalizer.java:756)
+	at org.apache.pig.Main.run(Main.java:572)
+	at org.apache.pig.Main.main(Main.java:175)
+================================================================================
