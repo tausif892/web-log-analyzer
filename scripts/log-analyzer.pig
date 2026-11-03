@@ -6,15 +6,22 @@
 
 -- 1. LOAD WEB SERVER LOGS
 
+
 logs = LOAD 'data/access_logs.csv'
     USING PigStorage(',')
     AS (
         ip:chararray,
         timestamp:chararray,
+        day_offset:int,
+        minute_offset:int,
         method:chararray,
         path:chararray,
-        status:int
+        status:int,
+        response_bytes:long,
+        user_agent:chararray,
+        referrer:chararray
     );
+
 
 -- 2. DATA CLEANING
 

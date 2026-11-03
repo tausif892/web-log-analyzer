@@ -1,0 +1,488 @@
+@reference "tailwindcss";
+
+/* Styles extracted from Welcome.tsx.
+   This file uses Tailwind's @apply directive; ensure it is processed by Tailwind CSS. */
+
+.welcome-style-1 {
+  @apply rounded-xl border border-slate-800 bg-slate-900 p-5;
+}
+
+.welcome-style-2 {
+  @apply flex items-center justify-between;
+}
+
+.welcome-style-3 {
+  @apply text-sm text-slate-400;
+}
+
+.welcome-style-4 {
+  @apply mt-4 text-3xl font-semibold text-white;
+}
+
+.welcome-style-5 {
+  @apply mt-2 text-xs text-slate-500;
+}
+
+.welcome-style-6 {
+  @apply mb-5;
+}
+
+.welcome-style-7 {
+  @apply text-lg font-semibold text-white;
+}
+
+.welcome-style-8 {
+  @apply mt-1 text-sm text-slate-400;
+}
+
+.welcome-style-9 {
+  @apply flex h-full min-h-48 items-center justify-center text-center;
+}
+
+.welcome-style-10 {
+  @apply mx-auto mb-3 text-emerald-400;
+}
+
+.welcome-style-11 {
+  @apply text-sm text-slate-400;
+}
+
+.welcome-style-12 {
+  @apply min-h-screen bg-[#080d18] text-slate-200;
+}
+
+.welcome-style-13 {
+  @apply flex min-h-screen;
+}
+
+.welcome-style-14 {
+  @apply hidden w-64 shrink-0 border-r border-slate-800 bg-[#0c1322] p-6 md:block;
+}
+
+.welcome-style-15 {
+  @apply mb-10 flex items-center gap-3;
+}
+
+.welcome-style-16 {
+  @apply rounded-lg bg-cyan-500/10 p-2 text-cyan-400;
+}
+
+.welcome-style-17 {
+  @apply text-xl font-bold tracking-wide text-white;
+}
+
+.welcome-style-18 {
+  @apply text-xs text-slate-500;
+}
+
+.welcome-style-19 {
+  @apply mb-3 text-xs font-semibold uppercase tracking-widest text-slate-500;
+}
+
+.welcome-style-20 {
+  @apply space-y-2;
+}
+
+.welcome-style-21 {
+  @apply flex items-center gap-3 rounded-lg bg-cyan-500/10 px-4 py-3 text-sm font-medium text-cyan-400;
+}
+
+.welcome-style-22 {
+  @apply flex items-center gap-3 rounded-lg px-4 py-3 text-sm text-slate-400 transition hover:bg-slate-800 hover:text-white;
+}
+
+.welcome-style-23 {
+  @apply flex items-center gap-3 rounded-lg px-4 py-3 text-sm text-slate-400 transition hover:bg-slate-800 hover:text-white;
+}
+
+.welcome-style-24 {
+  @apply flex items-center gap-3 rounded-lg px-4 py-3 text-sm text-slate-400 transition hover:bg-slate-800 hover:text-white;
+}
+
+.welcome-style-25 {
+  @apply mt-12 rounded-xl border border-slate-800 bg-slate-900 p-4;
+}
+
+.welcome-style-26 {
+  @apply flex items-center gap-2 text-emerald-400;
+}
+
+.welcome-style-27 {
+  @apply text-xs font-medium;
+}
+
+.welcome-style-28 {
+  @apply mt-2 text-sm font-semibold text-white;
+}
+
+.welcome-style-29 {
+  @apply mt-1 text-xs text-slate-500;
+}
+
+.welcome-style-30 {
+  @apply min-w-0 flex-1 p-5 md:p-8;
+}
+
+.welcome-style-31 {
+  @apply mb-8 flex flex-wrap items-center justify-between gap-4;
+}
+
+.welcome-style-32 {
+  @apply text-sm text-slate-500;
+}
+
+.welcome-style-33 {
+  @apply mt-2 text-2xl font-bold text-white md:text-3xl;
+}
+
+.welcome-style-34 {
+  @apply mt-2 text-sm text-slate-400;
+}
+
+.welcome-style-35 {
+  @apply mt-2 flex items-center gap-2 text-xs text-slate-500;
+}
+
+.welcome-style-36 {
+  @apply flex flex-wrap items-center gap-3;
+}
+
+.welcome-style-37 {
+  @apply flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900 px-4 py-2 text-sm text-slate-300;
+}
+
+.welcome-style-38 {
+  @apply flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-300 transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.welcome-style-39 {
+  @apply mb-6 flex items-start gap-3 rounded-xl border border-red-500/30 bg-red-500/10 p-4;
+}
+
+.welcome-style-40 {
+  @apply shrink-0 text-red-400;
+}
+
+.welcome-style-41 {
+  @apply text-sm font-medium text-red-400;
+}
+
+.welcome-style-42 {
+  @apply mt-1 text-xs text-red-300/80;
+}
+
+.welcome-style-43 {
+  @apply mt-2 text-xs text-slate-400;
+}
+
+.welcome-style-44 {
+  @apply mb-6 rounded-xl border border-slate-800 bg-slate-900 p-6 text-center;
+}
+
+.welcome-style-45 {
+  @apply mx-auto animate-spin text-cyan-400;
+}
+
+.welcome-style-46 {
+  @apply mt-3 text-sm text-slate-300;
+}
+
+.welcome-style-47 {
+  @apply mt-1 text-xs text-slate-500;
+}
+
+.welcome-style-48 {
+  @apply mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4;
+}
+
+.welcome-style-49 {
+  @apply mb-8 grid grid-cols-1 gap-6 xl:grid-cols-2;
+}
+
+.welcome-style-50 {
+  @apply rounded-xl border border-slate-800 bg-slate-900 p-5;
+}
+
+.welcome-style-51 {
+  @apply h-64;
+}
+
+.welcome-style-52 {
+  @apply rounded-xl border border-slate-800 bg-slate-900 p-5;
+}
+
+.welcome-style-53 {
+  @apply h-64;
+}
+
+.welcome-style-54 {
+  @apply rounded-xl border border-slate-800 bg-slate-900 p-5 xl:col-span-2;
+}
+
+.welcome-style-55 {
+  @apply h-64;
+}
+
+.welcome-style-56 {
+  @apply mb-8 rounded-xl border border-slate-800 bg-slate-900 p-5;
+}
+
+.welcome-style-57 {
+  @apply text-sm text-slate-400;
+}
+
+.welcome-style-58 {
+  @apply text-sm text-red-400;
+}
+
+.welcome-style-59 {
+  @apply space-y-4;
+}
+
+.welcome-style-60 {
+  @apply flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4;
+}
+
+.welcome-style-61 {
+  @apply flex items-start gap-3;
+}
+
+.welcome-style-62 {
+  @apply mt-1.5 h-2.5 w-2.5 rounded-full bg-orange-400;
+}
+
+.welcome-style-63 {
+  @apply text-sm font-medium text-white;
+}
+
+.welcome-style-64 {
+  @apply mt-1 text-xs text-slate-400;
+}
+
+.welcome-style-65 {
+  @apply rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300;
+}
+
+.welcome-style-66 {
+  @apply flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4;
+}
+
+.welcome-style-67 {
+  @apply flex items-start gap-3;
+}
+
+.welcome-style-68 {
+  @apply mt-1.5 h-2.5 w-2.5 rounded-full bg-red-400;
+}
+
+.welcome-style-69 {
+  @apply text-sm font-medium text-white;
+}
+
+.welcome-style-70 {
+  @apply mt-1 text-xs text-slate-400;
+}
+
+.welcome-style-71 {
+  @apply rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300;
+}
+
+.welcome-style-72 {
+  @apply flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4;
+}
+
+.welcome-style-73 {
+  @apply flex items-start gap-3;
+}
+
+.welcome-style-74 {
+  @apply mt-1.5 h-2.5 w-2.5 rounded-full bg-purple-400;
+}
+
+.welcome-style-75 {
+  @apply text-sm font-medium text-white;
+}
+
+.welcome-style-76 {
+  @apply mt-1 text-xs text-slate-400;
+}
+
+.welcome-style-77 {
+  @apply rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300;
+}
+
+.welcome-style-78 {
+  @apply grid grid-cols-1 gap-6 xl:grid-cols-2;
+}
+
+.welcome-style-79 {
+  @apply overflow-hidden rounded-xl border border-slate-800 bg-slate-900;
+}
+
+.welcome-style-80 {
+  @apply border-b border-slate-800 p-5;
+}
+
+.welcome-style-81 {
+  @apply font-semibold text-white;
+}
+
+.welcome-style-82 {
+  @apply mt-1 text-xs text-slate-400;
+}
+
+.welcome-style-83 {
+  @apply overflow-x-auto;
+}
+
+.welcome-style-84 {
+  @apply w-full text-left text-sm;
+}
+
+.welcome-style-85 {
+  @apply bg-slate-800/50 text-xs uppercase text-slate-400;
+}
+
+.welcome-style-86 {
+  @apply px-5 py-3;
+}
+
+.welcome-style-87 {
+  @apply px-5 py-3 text-right;
+}
+
+.welcome-style-88 {
+  @apply border-t border-slate-800;
+}
+
+.welcome-style-89 {
+  @apply px-5 py-4 font-mono text-cyan-400;
+}
+
+.welcome-style-90 {
+  @apply px-5 py-4 text-right text-white;
+}
+
+.welcome-style-91 {
+  @apply px-5 py-8 text-center text-slate-500;
+}
+
+.welcome-style-92 {
+  @apply overflow-hidden rounded-xl border border-slate-800 bg-slate-900;
+}
+
+.welcome-style-93 {
+  @apply border-b border-slate-800 p-5;
+}
+
+.welcome-style-94 {
+  @apply font-semibold text-white;
+}
+
+.welcome-style-95 {
+  @apply mt-1 text-xs text-slate-400;
+}
+
+.welcome-style-96 {
+  @apply overflow-x-auto;
+}
+
+.welcome-style-97 {
+  @apply w-full text-left text-sm;
+}
+
+.welcome-style-98 {
+  @apply bg-slate-800/50 text-xs uppercase text-slate-400;
+}
+
+.welcome-style-99 {
+  @apply px-5 py-3;
+}
+
+.welcome-style-100 {
+  @apply px-5 py-3 text-right;
+}
+
+.welcome-style-101 {
+  @apply border-t border-slate-800;
+}
+
+.welcome-style-102 {
+  @apply px-5 py-4 font-mono text-red-400;
+}
+
+.welcome-style-103 {
+  @apply px-5 py-4 text-right text-white;
+}
+
+.welcome-style-104 {
+  @apply px-5 py-8 text-center text-slate-500;
+}
+
+.welcome-style-105 {
+  @apply overflow-hidden rounded-xl border border-slate-800 bg-slate-900 xl:col-span-2;
+}
+
+.welcome-style-106 {
+  @apply border-b border-slate-800 p-5;
+}
+
+.welcome-style-107 {
+  @apply font-semibold text-white;
+}
+
+.welcome-style-108 {
+  @apply mt-1 text-xs text-slate-400;
+}
+
+.welcome-style-109 {
+  @apply overflow-x-auto;
+}
+
+.welcome-style-110 {
+  @apply w-full text-left text-sm;
+}
+
+.welcome-style-111 {
+  @apply bg-slate-800/50 text-xs uppercase text-slate-400;
+}
+
+.welcome-style-112 {
+  @apply px-5 py-3;
+}
+
+.welcome-style-113 {
+  @apply px-5 py-3 text-right;
+}
+
+.welcome-style-114 {
+  @apply border-t border-slate-800;
+}
+
+.welcome-style-115 {
+  @apply px-5 py-4 font-mono text-purple-400;
+}
+
+.welcome-style-116 {
+  @apply px-5 py-4 text-right text-white;
+}
+
+.welcome-style-117 {
+  @apply px-5 py-8 text-center text-slate-500;
+}
+
+.welcome-style-118 {
+  @apply mt-8 border-t border-slate-800 pt-5 text-center text-xs text-slate-500;
+}
+
+.welcome-status-indicator {
+  @apply h-2 w-2 rounded-full;
+}
+
+.welcome-refresh-spinning {
+  @apply animate-spin;
+}
+
+.welcome-stat-icon {
+  @apply rounded-lg p-2;
+}

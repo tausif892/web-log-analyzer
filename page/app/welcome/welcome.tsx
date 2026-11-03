@@ -1,5 +1,6 @@
 
 import { useCallback, useEffect, useState } from "react";
+import "./Welcome.css";
 
 import {
   Activity,
@@ -63,20 +64,20 @@ function StatCard({
   color,
 }: StatCardProps) {
   return (
-    <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-slate-400">{title}</p>
+    <div className="welcome-style-1">
+      <div className="welcome-style-2">
+        <p className="welcome-style-3">{title}</p>
 
-        <div className={`rounded-lg p-2 ${color}`}>
+        <div className={`welcome-stat-icon ${color}`}>
           <Icon size={19} />
         </div>
       </div>
 
-      <h2 className="mt-4 text-3xl font-semibold text-white">
+      <h2 className="welcome-style-4">
         {value}
       </h2>
 
-      <p className="mt-2 text-xs text-slate-500">
+      <p className="welcome-style-5">
         {description}
       </p>
     </div>
@@ -91,12 +92,12 @@ function SectionTitle({
   subtitle: string;
 }) {
   return (
-    <div className="mb-5">
-      <h2 className="text-lg font-semibold text-white">
+    <div className="welcome-style-6">
+      <h2 className="welcome-style-7">
         {title}
       </h2>
 
-      <p className="mt-1 text-sm text-slate-400">
+      <p className="welcome-style-8">
         {subtitle}
       </p>
     </div>
@@ -105,14 +106,14 @@ function SectionTitle({
 
 function EmptyState({ message }: { message: string }) {
   return (
-    <div className="flex h-full min-h-48 items-center justify-center text-center">
+    <div className="welcome-style-9">
       <div>
         <CheckCircle2
           size={28}
-          className="mx-auto mb-3 text-emerald-400"
+          className="welcome-style-10"
         />
 
-        <p className="text-sm text-slate-400">
+        <p className="welcome-style-11">
           {message}
         </p>
       </div>
@@ -253,30 +254,30 @@ export default function Welcome() {
   // ------------------------------------------------
 
   return (
-    <div className="min-h-screen bg-[#080d18] text-slate-200">
+    <div className="welcome-style-12">
 
-      <div className="flex min-h-screen">
+      <div className="welcome-style-13">
 
         {/* ==========================================
             SIDEBAR
         ========================================== */}
 
-        <aside className="hidden w-64 shrink-0 border-r border-slate-800 bg-[#0c1322] p-6 md:block">
+        <aside className="welcome-style-14">
 
           {/* Logo */}
 
-          <div className="mb-10 flex items-center gap-3">
+          <div className="welcome-style-15">
 
-            <div className="rounded-lg bg-cyan-500/10 p-2 text-cyan-400">
+            <div className="welcome-style-16">
               <ShieldCheck size={25} />
             </div>
 
             <div>
-              <h1 className="text-xl font-bold tracking-wide text-white">
+              <h1 className="welcome-style-17">
                 LOGWATCH
               </h1>
 
-              <p className="text-xs text-slate-500">
+              <p className="welcome-style-18">
                 Log Analytics Platform
               </p>
             </div>
@@ -285,15 +286,15 @@ export default function Welcome() {
 
           {/* Navigation */}
 
-          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-500">
+          <p className="welcome-style-19">
             Workspace
           </p>
 
-          <nav className="space-y-2">
+          <nav className="welcome-style-20">
 
             <a
               href="#overview"
-              className="flex items-center gap-3 rounded-lg bg-cyan-500/10 px-4 py-3 text-sm font-medium text-cyan-400"
+              className="welcome-style-21"
             >
               <LayoutDashboard size={18} />
               Overview
@@ -301,7 +302,7 @@ export default function Welcome() {
 
             <a
               href="#analytics"
-              className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm text-slate-400 transition hover:bg-slate-800 hover:text-white"
+              className="welcome-style-22"
             >
               <BarChart3 size={18} />
               Log Analytics
@@ -309,7 +310,7 @@ export default function Welcome() {
 
             <a
               href="#detections"
-              className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm text-slate-400 transition hover:bg-slate-800 hover:text-white"
+              className="welcome-style-23"
             >
               <ShieldAlert size={18} />
               Threat Detection
@@ -317,7 +318,7 @@ export default function Welcome() {
 
             <a
               href="#reports"
-              className="flex items-center gap-3 rounded-lg px-4 py-3 text-sm text-slate-400 transition hover:bg-slate-800 hover:text-white"
+              className="welcome-style-24"
             >
               <Terminal size={18} />
               Reports
@@ -327,21 +328,21 @@ export default function Welcome() {
 
           {/* Engine status */}
 
-          <div className="mt-12 rounded-xl border border-slate-800 bg-slate-900 p-4">
+          <div className="welcome-style-25">
 
-            <div className="flex items-center gap-2 text-emerald-400">
+            <div className="welcome-style-26">
               <Activity size={16} />
 
-              <span className="text-xs font-medium">
+              <span className="welcome-style-27">
                 Analysis engine
               </span>
             </div>
 
-            <p className="mt-2 text-sm font-semibold text-white">
+            <p className="welcome-style-28">
               Apache Pig
             </p>
 
-            <p className="mt-1 text-xs text-slate-500">
+            <p className="welcome-style-29">
               Reports retrieved from GCS
             </p>
 
@@ -353,7 +354,7 @@ export default function Welcome() {
             MAIN CONTENT
         ========================================== */}
 
-        <main className="min-w-0 flex-1 p-5 md:p-8">
+        <main className="welcome-style-30">
 
           {/* ========================================
               HEADER
@@ -361,25 +362,25 @@ export default function Welcome() {
 
           <header
             id="overview"
-            className="mb-8 flex flex-wrap items-center justify-between gap-4"
+            className="welcome-style-31"
           >
 
             <div>
 
-              <p className="text-sm text-slate-500">
+              <p className="welcome-style-32">
                 Workspace / Overview
               </p>
 
-              <h1 className="mt-2 text-2xl font-bold text-white md:text-3xl">
+              <h1 className="welcome-style-33">
                 Security Dashboard
               </h1>
 
-              <p className="mt-2 text-sm text-slate-400">
+              <p className="welcome-style-34">
                 Monitor and analyze your web server access logs.
               </p>
 
               {analytics.lastFetched && (
-                <p className="mt-2 flex items-center gap-2 text-xs text-slate-500">
+                <p className="welcome-style-35">
                   <Clock size={13} />
 
                   Last fetched: {analytics.lastFetched}
@@ -388,14 +389,14 @@ export default function Welcome() {
 
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="welcome-style-36">
 
               {/* Status */}
 
-              <div className="flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-900 px-4 py-2 text-sm text-slate-300">
+              <div className="welcome-style-37">
 
                 <span
-                  className={`h-2 w-2 rounded-full ${
+                  className={`welcome-status-indicator ${
                     loading
                       ? "bg-yellow-400"
                       : error
@@ -417,14 +418,12 @@ export default function Welcome() {
               <button
                 onClick={handleRefresh}
                 disabled={loading || refreshing}
-                className="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-sm text-slate-300 transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-50"
+                className="welcome-style-38"
               >
 
                 <RefreshCw
                   size={16}
-                  className={
-                    refreshing ? "animate-spin" : ""
-                  }
+                  className={refreshing ? "welcome-refresh-spinning" : ""}
                 />
 
                 Refresh
@@ -441,23 +440,23 @@ export default function Welcome() {
 
           {error && (
 
-            <div className="mb-6 flex items-start gap-3 rounded-xl border border-red-500/30 bg-red-500/10 p-4">
+            <div className="welcome-style-39">
 
               <AlertTriangle
                 size={20}
-                className="shrink-0 text-red-400"
+                className="welcome-style-40"
               />
 
               <div>
-                <p className="text-sm font-medium text-red-400">
+                <p className="welcome-style-41">
                   Unable to load analytics
                 </p>
 
-                <p className="mt-1 text-xs text-red-300/80">
+                <p className="welcome-style-42">
                   {error}
                 </p>
 
-                <p className="mt-2 text-xs text-slate-400">
+                <p className="welcome-style-43">
                   Check your GCS bucket name, object permissions,
                   CORS configuration and published report files.
                 </p>
@@ -473,18 +472,18 @@ export default function Welcome() {
 
           {loading && (
 
-            <div className="mb-6 rounded-xl border border-slate-800 bg-slate-900 p-6 text-center">
+            <div className="welcome-style-44">
 
               <RefreshCw
                 size={24}
-                className="mx-auto animate-spin text-cyan-400"
+                className="welcome-style-45"
               />
 
-              <p className="mt-3 text-sm text-slate-300">
+              <p className="welcome-style-46">
                 Retrieving analytical reports...
               </p>
 
-              <p className="mt-1 text-xs text-slate-500">
+              <p className="welcome-style-47">
                 Connecting to Google Cloud Storage
               </p>
 
@@ -496,7 +495,7 @@ export default function Welcome() {
               KPI CARDS
           ======================================== */}
 
-          <section className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <section className="welcome-style-48">
 
             <StatCard
               title="Total Findings"
@@ -538,19 +537,19 @@ export default function Welcome() {
 
           <section
             id="analytics"
-            className="mb-8 grid grid-cols-1 gap-6 xl:grid-cols-2"
+            className="welcome-style-49"
           >
 
             {/* HIGH VOLUME TRAFFIC */}
 
-            <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
+            <div className="welcome-style-50">
 
               <SectionTitle
                 title="High Volume Traffic"
                 subtitle="Requests grouped by IP address"
               />
 
-              <div className="h-64">
+              <div className="welcome-style-51">
 
                 {!loading && !error && highVolumeData.length === 0 ? (
 
@@ -600,14 +599,14 @@ export default function Welcome() {
 
             {/* REPEATED FAILURES */}
 
-            <div className="rounded-xl border border-slate-800 bg-slate-900 p-5">
+            <div className="welcome-style-52">
 
               <SectionTitle
                 title="Repeated Authentication Failures"
                 subtitle="401 and 403 responses grouped by IP"
               />
 
-              <div className="h-64">
+              <div className="welcome-style-53">
 
                 {!loading && !error && failureData.length === 0 ? (
 
@@ -657,14 +656,14 @@ export default function Welcome() {
 
             {/* SERVER ERRORS */}
 
-            <div className="rounded-xl border border-slate-800 bg-slate-900 p-5 xl:col-span-2">
+            <div className="welcome-style-54">
 
               <SectionTitle
                 title="Server Error Distribution"
                 subtitle="HTTP 5xx errors grouped by endpoint"
               />
 
-              <div className="h-64">
+              <div className="welcome-style-55">
 
                 {!loading && !error && serverErrorData.length === 0 ? (
 
@@ -720,7 +719,7 @@ export default function Welcome() {
 
           <section
             id="detections"
-            className="mb-8 rounded-xl border border-slate-800 bg-slate-900 p-5"
+            className="welcome-style-56"
           >
 
             <SectionTitle
@@ -730,13 +729,13 @@ export default function Welcome() {
 
             {loading ? (
 
-              <p className="text-sm text-slate-400">
+              <p className="welcome-style-57">
                 Loading detection results...
               </p>
 
             ) : error ? (
 
-              <p className="text-sm text-red-400">
+              <p className="welcome-style-58">
                 Detection results are currently unavailable.
               </p>
 
@@ -746,26 +745,26 @@ export default function Welcome() {
 
             ) : (
 
-              <div className="space-y-4">
+              <div className="welcome-style-59">
 
                 {highVolumeData.map((item) => (
 
                   <div
                     key={item.ip}
-                    className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4"
+                    className="welcome-style-60"
                   >
 
-                    <div className="flex items-start gap-3">
+                    <div className="welcome-style-61">
 
-                      <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-orange-400" />
+                      <span className="welcome-style-62" />
 
                       <div>
 
-                        <p className="text-sm font-medium text-white">
+                        <p className="welcome-style-63">
                           High request volume
                         </p>
 
-                        <p className="mt-1 text-xs text-slate-400">
+                        <p className="welcome-style-64">
                           {item.ip} generated {item.requests} requests
                         </p>
 
@@ -773,7 +772,7 @@ export default function Welcome() {
 
                     </div>
 
-                    <span className="rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300">
+                    <span className="welcome-style-65">
                       Threshold reached
                     </span>
 
@@ -785,20 +784,20 @@ export default function Welcome() {
 
                   <div
                     key={item.ip}
-                    className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4"
+                    className="welcome-style-66"
                   >
 
-                    <div className="flex items-start gap-3">
+                    <div className="welcome-style-67">
 
-                      <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-red-400" />
+                      <span className="welcome-style-68" />
 
                       <div>
 
-                        <p className="text-sm font-medium text-white">
+                        <p className="welcome-style-69">
                           Repeated authentication failures
                         </p>
 
-                        <p className="mt-1 text-xs text-slate-400">
+                        <p className="welcome-style-70">
                           {item.ip} generated {item.failures} failed requests
                         </p>
 
@@ -806,7 +805,7 @@ export default function Welcome() {
 
                     </div>
 
-                    <span className="rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300">
+                    <span className="welcome-style-71">
                       Threshold reached
                     </span>
 
@@ -818,20 +817,20 @@ export default function Welcome() {
 
                   <div
                     key={item.endpoint}
-                    className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4"
+                    className="welcome-style-72"
                   >
 
-                    <div className="flex items-start gap-3">
+                    <div className="welcome-style-73">
 
-                      <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-purple-400" />
+                      <span className="welcome-style-74" />
 
                       <div>
 
-                        <p className="text-sm font-medium text-white">
+                        <p className="welcome-style-75">
                           Server errors detected
                         </p>
 
-                        <p className="mt-1 text-xs text-slate-400">
+                        <p className="welcome-style-76">
                           {item.endpoint} returned {item.errors} server errors
                         </p>
 
@@ -839,7 +838,7 @@ export default function Welcome() {
 
                     </div>
 
-                    <span className="rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300">
+                    <span className="welcome-style-77">
                       Detected
                     </span>
 
@@ -859,34 +858,34 @@ export default function Welcome() {
 
           <section
             id="reports"
-            className="grid grid-cols-1 gap-6 xl:grid-cols-2"
+            className="welcome-style-78"
           >
 
             {/* HIGH VOLUME TABLE */}
 
-            <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900">
+            <div className="welcome-style-79">
 
-              <div className="border-b border-slate-800 p-5">
+              <div className="welcome-style-80">
 
-                <h2 className="font-semibold text-white">
+                <h2 className="welcome-style-81">
                   High Volume IP Addresses
                 </h2>
 
-                <p className="mt-1 text-xs text-slate-400">
+                <p className="welcome-style-82">
                   Requests exceeding the configured threshold
                 </p>
 
               </div>
 
-              <div className="overflow-x-auto">
+              <div className="welcome-style-83">
 
-                <table className="w-full text-left text-sm">
+                <table className="welcome-style-84">
 
-                  <thead className="bg-slate-800/50 text-xs uppercase text-slate-400">
+                  <thead className="welcome-style-85">
 
                     <tr>
-                      <th className="px-5 py-3">IP Address</th>
-                      <th className="px-5 py-3 text-right">Requests</th>
+                      <th className="welcome-style-86">IP Address</th>
+                      <th className="welcome-style-87">Requests</th>
                     </tr>
 
                   </thead>
@@ -897,14 +896,14 @@ export default function Welcome() {
 
                       <tr
                         key={item.ip}
-                        className="border-t border-slate-800"
+                        className="welcome-style-88"
                       >
 
-                        <td className="px-5 py-4 font-mono text-cyan-400">
+                        <td className="welcome-style-89">
                           {item.ip}
                         </td>
 
-                        <td className="px-5 py-4 text-right text-white">
+                        <td className="welcome-style-90">
                           {item.requests}
                         </td>
 
@@ -917,7 +916,7 @@ export default function Welcome() {
                       <tr>
                         <td
                           colSpan={2}
-                          className="px-5 py-8 text-center text-slate-500"
+                          className="welcome-style-91"
                         >
                           No records found.
                         </td>
@@ -935,29 +934,29 @@ export default function Welcome() {
 
             {/* REPEATED FAILURES TABLE */}
 
-            <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900">
+            <div className="welcome-style-92">
 
-              <div className="border-b border-slate-800 p-5">
+              <div className="welcome-style-93">
 
-                <h2 className="font-semibold text-white">
+                <h2 className="welcome-style-94">
                   Repeated Failed Requests
                 </h2>
 
-                <p className="mt-1 text-xs text-slate-400">
+                <p className="welcome-style-95">
                   IP addresses with repeated authentication failures
                 </p>
 
               </div>
 
-              <div className="overflow-x-auto">
+              <div className="welcome-style-96">
 
-                <table className="w-full text-left text-sm">
+                <table className="welcome-style-97">
 
-                  <thead className="bg-slate-800/50 text-xs uppercase text-slate-400">
+                  <thead className="welcome-style-98">
 
                     <tr>
-                      <th className="px-5 py-3">IP Address</th>
-                      <th className="px-5 py-3 text-right">Failures</th>
+                      <th className="welcome-style-99">IP Address</th>
+                      <th className="welcome-style-100">Failures</th>
                     </tr>
 
                   </thead>
@@ -968,14 +967,14 @@ export default function Welcome() {
 
                       <tr
                         key={item.ip}
-                        className="border-t border-slate-800"
+                        className="welcome-style-101"
                       >
 
-                        <td className="px-5 py-4 font-mono text-red-400">
+                        <td className="welcome-style-102">
                           {item.ip}
                         </td>
 
-                        <td className="px-5 py-4 text-right text-white">
+                        <td className="welcome-style-103">
                           {item.failures}
                         </td>
 
@@ -988,7 +987,7 @@ export default function Welcome() {
                       <tr>
                         <td
                           colSpan={2}
-                          className="px-5 py-8 text-center text-slate-500"
+                          className="welcome-style-104"
                         >
                           No records found.
                         </td>
@@ -1006,29 +1005,29 @@ export default function Welcome() {
 
             {/* SERVER ERRORS TABLE */}
 
-            <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-900 xl:col-span-2">
+            <div className="welcome-style-105">
 
-              <div className="border-b border-slate-800 p-5">
+              <div className="welcome-style-106">
 
-                <h2 className="font-semibold text-white">
+                <h2 className="welcome-style-107">
                   Server Error Endpoints
                 </h2>
 
-                <p className="mt-1 text-xs text-slate-400">
+                <p className="welcome-style-108">
                   Endpoints with HTTP 5xx responses
                 </p>
 
               </div>
 
-              <div className="overflow-x-auto">
+              <div className="welcome-style-109">
 
-                <table className="w-full text-left text-sm">
+                <table className="welcome-style-110">
 
-                  <thead className="bg-slate-800/50 text-xs uppercase text-slate-400">
+                  <thead className="welcome-style-111">
 
                     <tr>
-                      <th className="px-5 py-3">Endpoint</th>
-                      <th className="px-5 py-3 text-right">Errors</th>
+                      <th className="welcome-style-112">Endpoint</th>
+                      <th className="welcome-style-113">Errors</th>
                     </tr>
 
                   </thead>
@@ -1039,14 +1038,14 @@ export default function Welcome() {
 
                       <tr
                         key={item.endpoint}
-                        className="border-t border-slate-800"
+                        className="welcome-style-114"
                       >
 
-                        <td className="px-5 py-4 font-mono text-purple-400">
+                        <td className="welcome-style-115">
                           {item.endpoint}
                         </td>
 
-                        <td className="px-5 py-4 text-right text-white">
+                        <td className="welcome-style-116">
                           {item.errors}
                         </td>
 
@@ -1059,7 +1058,7 @@ export default function Welcome() {
                       <tr>
                         <td
                           colSpan={2}
-                          className="px-5 py-8 text-center text-slate-500"
+                          className="welcome-style-117"
                         >
                           No records found.
                         </td>
@@ -1081,7 +1080,7 @@ export default function Welcome() {
               FOOTER
           ======================================== */}
 
-          <footer className="mt-8 border-t border-slate-800 pt-5 text-center text-xs text-slate-500">
+          <footer className="welcome-style-118">
 
             LOGWATCH · Powered by Apache Pig · Google Cloud Storage
 
