@@ -23,19 +23,27 @@ echo "================================"
 mkdir -p data output
 
 # Step 1: Download logs
-echo "[1/3] Downloading access logs..."
+echo "[1/4] Downloading access logs..."
 
 gcloud storage cp \
     "$BUCKET/input/access_logs.csv" \
     data/access_logs.csv
 
-# Step 2: Execute Pig
-echo "[2/3] Running Apache Pig locally..."
+# Step 2: Clean previous Pig outputs
+echo "[2/4] Removing previous analysis outputs..."
+
+rm -rf \
+    output/high_volume \
+    output/repeated_failures \
+    output/server_errors
+
+# Step 3: Execute Pig
+echo "[3/4] Running Apache Pig locally..."
 
 pig -x local scripts/log-analyzer.pig
 
-# Step 3: Upload reports
-echo "[3/3] Uploading analytics reports..."
+# Step 4: Upload reports
+echo "[4/4] Uploading analytics reports..."
 
 gcloud storage cp \
     output/high_volume/part-r-00000 \

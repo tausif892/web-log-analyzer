@@ -1,5 +1,6 @@
 
 import { useCallback, useEffect, useState } from "react";
+import type { ElementType } from "react";
 import "./Welcome.css";
 
 import {
@@ -9,6 +10,7 @@ import {
   CheckCircle2,
   Clock,
   Globe,
+  FileSpreadsheet,
   LayoutDashboard,
   RefreshCw,
   Server,
@@ -41,7 +43,7 @@ const EMPTY_ANALYTICS: Analytics = {
   highVolume: [],
   repeatedFailures: [],
   serverErrors: [],
-  lastFetched: "",
+  lastUpdated: "",
 };
 
 // --------------------------------------------------
@@ -52,7 +54,7 @@ interface StatCardProps {
   title: string;
   value: string | number;
   description: string;
-  icon: React.ElementType;
+  icon: ElementType;
   color: string;
 }
 
@@ -167,6 +169,69 @@ export default function Welcome() {
         setLoading(true);
         setError(null);
 
+        // Step 1: Start the analysis engine (or join an existing run).
+        const startResponse = await fetch("/api/analysis", {
+          method: "POST",
+        });
+
+        if (!startResponse.ok) {
+          const body = await startResponse.json().catch(() => null);
+          throw new Error(
+            body?.error || "Unable to start the analysis engine."
+          );
+        }
+
+        // Step 2: Poll the server until the analysis has completed.
+        let status: "idle" | "running" | "succeeded" | "failed" = "running";
+        const deadline = Date.now() + 10 * 60 * 1000;
+
+        while (active && status === "running") {
+          if (Date.now() > deadline) {
+            throw new Error("Analysis timed out after 10 minutes.");
+          }
+
+          await new Promise((resolve) => setTimeout(resolve, 1500));
+          if (!active) return;
+
+          const statusResponse = await fetch("/api/analysis", {
+            method: "GET",
+            cache: "no-store",
+          });
+
+          if (!statusResponse.ok) {
+            throw new Error("Unable to retrieve analysis status.");
+          }
+
+          const result: { status?: string; error?: string } =
+            await statusResponse.json();
+
+          if (
+            result.status !== "idle" &&
+            result.status !== "running" &&
+            result.status !== "succeeded" &&
+            result.status !== "failed"
+          ) {
+            throw new Error("The analysis server returned an unknown status.");
+          }
+
+          status = result.status;
+
+          if (status === "failed") {
+            throw new Error(result.error || "The analysis engine failed.");
+          }
+
+          if (status === "idle") {
+            throw new Error("The analysis engine did not start.");
+          }
+        }
+
+        if (!active) return;
+
+        if (status !== "succeeded") {
+          throw new Error("The analysis did not complete successfully.");
+        }
+
+        // Step 3: Fetch the reports only after Pig has uploaded them.
         const result = await fetchAnalytics();
 
         if (active) {
@@ -177,7 +242,7 @@ export default function Welcome() {
           setError(
             err instanceof Error
               ? err.message
-              : "Unable to retrieve analytics."
+              : "Unable to initialize the dashboard."
           );
         }
       } finally {
@@ -187,7 +252,7 @@ export default function Welcome() {
       }
     }
 
-    initializeDashboard();
+    void initializeDashboard();
 
     return () => {
       active = false;
@@ -324,6 +389,14 @@ export default function Welcome() {
               Reports
             </a>
 
+            <a
+              href="/upload"
+              className="welcome-style-24"
+            >
+              <FileSpreadsheet size={18} />
+              Upload & Analyze
+            </a>
+
           </nav>
 
           {/* Engine status */}
@@ -379,11 +452,11 @@ export default function Welcome() {
                 Monitor and analyze your web server access logs.
               </p>
 
-              {analytics.lastFetched && (
+              {analytics.lastUpdated && (
                 <p className="welcome-style-35">
                   <Clock size={13} />
 
-                  Last fetched: {analytics.lastFetched}
+                  Last fetched: {analytics.lastUpdated}
                 </p>
               )}
 
@@ -480,11 +553,11 @@ export default function Welcome() {
               />
 
               <p className="welcome-style-46">
-                Retrieving analytical reports...
+                Running Apache Pig analysis...
               </p>
 
               <p className="welcome-style-47">
-                Connecting to Google Cloud Storage
+                Processing access logs and uploading reports to Google Cloud Storage
               </p>
 
             </div>
