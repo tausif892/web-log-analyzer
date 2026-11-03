@@ -1,0 +1,66 @@
+
+steps:
+  - name: 'gcr.io/google.com/cloudsdktool/google-cloud-cli:stable'
+    id: 'download-input'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        mkdir -p data
+        gcloud storage cp \
+          gs://web-logs-bucket-cloud-computing/input/access_logs.csv \
+          data/access_logs.csv
+
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'build-pig-image'
+    args:
+      - 'build'
+      - '-t'
+      - 'pig-runner:latest'
+      - '-f'
+      - 'Dockerfile.pig'
+      - '.'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    id: 'execute-pig'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        rm -rf output/high_volume \
+               output/repeated_failures \
+               output/server_errors
+
+        docker run --rm \
+          -v /workspace:/workspace \
+          -w /workspace \
+          pig-runner:latest \
+          pig -x local scripts/log-analyzer.pig
+
+        test -f output/high_volume/part-r-00000
+        test -f output/repeated_failures/part-r-00000
+        test -f output/server_errors/part-r-00000
+
+  - name: 'gcr.io/google.com/cloudsdktool/google-cloud-cli:stable'
+    id: 'publish-reports'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        gcloud storage cp \
+          output/high_volume/part-r-00000 \
+          gs://web-logs-bucket-cloud-computing/output/high_volume.csv
+
+        gcloud storage cp \
+          output/repeated_failures/part-r-00000 \
+          gs://web-logs-bucket-cloud-computing/output/repeated_failures.csv
+
+        gcloud storage cp \
+          output/server_errors/part-r-00000 \
+          gs://web-logs-bucket-cloud-computing/output/server_errors.csv
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: '1800s'
+
